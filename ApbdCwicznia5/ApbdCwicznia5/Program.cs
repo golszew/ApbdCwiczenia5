@@ -1,5 +1,4 @@
 using ApbdCwicznia5.Database;
-using ApbdCwicznia5.Endpoints;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +10,7 @@ builder.Services.AddSwaggerGen();
 //To trzeba dodac tworzac kontrolery
 builder.Services.AddControllers();
 //Zawsze bedzie ta sama instancja tej klasy
-builder.Services.AddSingleton<MockDb>();
+// builder.Services.AddSingleton<MockDb>();
 
 var app = builder.Build();
 
@@ -25,9 +24,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
-// Minimal API
-app.MapAnimalEndpoints();
 
 // Controlers
 //to rowniez przy tworzeniu kontrolerow
